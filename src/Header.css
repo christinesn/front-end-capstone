@@ -4,6 +4,7 @@ header {
     justify-content: center;
     align-items: center;
     column-gap: 2em;
+    flex-wrap: wrap;
 }
 
 header img {

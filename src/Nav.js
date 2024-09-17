@@ -1,15 +1,16 @@
 import './Nav.css'
+import { Link } from 'react-router-dom'
 
 export default function Nav() {
     return (
         <nav>
             <ul>
-                <li><a href="#" className="card-title">Home</a></li>
-                <li><a href="#" className="card-title">About</a></li>
-                <li><a href="#" className="card-title">Menu</a></li>
-                <li><a href="#" className="card-title">Reservations</a></li>
-                <li><a href="#" className="card-title">Order Online</a></li>
-                <li><a href="#" className="card-title">Login</a></li>
+                <li><Link to="/" className="card-title">Home</Link></li>
+                <li><Link to="/" className="card-title">About</Link></li>
+                <li><Link to="/" className="card-title">Menu</Link></li>
+                <li><Link to="/booking" className="card-title">Reservations</Link></li>
+                <li><Link to="/" className="card-title">Order Online</Link></li>
+                <li><Link to="/" className="card-title">Login</Link></li>
             </ul>
         </nav>
     )

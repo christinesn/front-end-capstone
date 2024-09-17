@@ -1,0 +1,6 @@
+#hero img {
+    height: 300px;
+    width: 300px;
+    border-radius: 16px;
+    object-fit: cover;
+}

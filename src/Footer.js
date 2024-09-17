@@ -8,7 +8,7 @@ export default function Footer () {
                 alt=""
             />
             <article>
-                <h6>Doormat Navigation</h6>
+                <h6>Navigation</h6>
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
