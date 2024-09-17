@@ -1,6 +1,6 @@
 header {
     display: flex;
-    height: 80px;
+    height: 100px;
     justify-content: center;
     align-items: center;
     column-gap: 2em;
@@ -8,5 +8,5 @@ header {
 
 header img {
     flex-grow: 0;
-    height: 40px;
+    height: 60px;
 }

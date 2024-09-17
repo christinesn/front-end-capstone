@@ -1,7 +1,100 @@
+/** Karla */
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+/** Markazi Text */
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&display=swap');
+
+/**
+  Breakpoints
+  sm: 640px
+  md: 768px
+  lg: 1024px
+  xl: 1280px
+  2xl: 1536px
+*/
+
 * {
   box-sizing: border-box;
 }
 
+:root {
+  --primary1: #495E57;
+  --primary2: #F4CE14;
+  --secondary1: #EE9972;
+  --secondary2: #FBDABB;
+  --highlight1: #EDEFEE;
+  --highlight2: #333333;
+}
+
 html {
   font-size: 16px;
+  font-family: "Karla", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  text-underline-offset: 4px;
+}
+
+a:hover, a:focus, a:active {
+  text-decoration: underline;
+  transition: all 150ms ease-out;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.3em;
+}
+
+.display-title {
+  font-family: "Markazi Text", serif;
+  font-weight: medium;
+  font-size: 64px;
+}
+
+.sub-title {
+  font-family: "Markazi Text";
+  font-weight: normal;
+  font-size: 40px;
+}
+
+.lead-text {
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.section-title {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.section-categories {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--highlight2);
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.highlight {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border-radius: 16px;
 }

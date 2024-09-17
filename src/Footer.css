@@ -13,9 +13,3 @@ footer img {
     width: 160px;
     object-fit: cover;
 }
-
-footer ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
