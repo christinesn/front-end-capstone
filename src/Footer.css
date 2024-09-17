@@ -1,0 +1,21 @@
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    align-content:first baseline;
+    column-gap: 2.5em;
+    height: 300px;
+    border: 1px solid #333;
+    padding: 2em 0 2em 0;
+}
+
+footer img {
+    width: 160px;
+    object-fit: cover;
+}
+
+footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

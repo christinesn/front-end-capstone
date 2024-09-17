@@ -1,7 +1,12 @@
+import './Footer.css'
+
 export default function Footer () {
     return (
         <footer>
-            <img src="/restaurantfood.jpg" alt="" />
+            <img
+                src="/images/restaurantfood.jpg"
+                alt=""
+            />
             <article>
                 <h6>Doormat Navigation</h6>
                 <ul>
