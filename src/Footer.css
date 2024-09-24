@@ -1,16 +1,42 @@
 footer {
+    width: 100%;
+    min-height: 300px;
+    background: var(--highlight2);
+    padding: 3em 0;
+}
+
+.footer-content {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    align-content:first baseline;
+    justify-content: space-between;
     column-gap: 2.5em;
-    height: 300px;
-    border: 1px solid #333;
-    padding: 2em 0 2em 0;
+}
+
+.footer-content h2 {
+    font-size: var(--size-xl);
+    font-weight: var(--weight-extrabold);
+    color: var(--highlight1);
+    margin-bottom: 0.5em;
+}
+
+.footer-content article {
+    flex: 1 1 0;
 }
 
 footer img {
     width: 160px;
     object-fit: cover;
+}
+
+footer a {
+    color: var(--highlight1);
+}
+
+footer a:hover,
+footer a:focus,
+footer a:active {
+    color: var(--secondary2);
+}
+
+footer li {
+    line-height: 1.5;
 }
