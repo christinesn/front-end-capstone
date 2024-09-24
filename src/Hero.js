@@ -7,7 +7,7 @@ export default function Hero () {
             <div className="container" id="hero-content">
                 <article>
                     <h1 className="display-title">Little Lemon</h1>
-                    <h2 className="sub-title">Chicago</h2>
+                    <span className="sub-title">Chicago</span>
                     <p className="lead-text">We are a family owned restaurant, focused on traditional recipes with a modern twist.</p>
                     <Link to="/booking" className="button">Reserve a Table</Link>
                 </article>
