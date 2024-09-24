@@ -1,3 +1,13 @@
+#specials {
+    width: 100%;
+    padding: 1em;
+}
+
+#specials .heading {
+    display: flex;
+    justify-content: center;
+}
+
 .card img {
     height: 200px;
     width: 200px;

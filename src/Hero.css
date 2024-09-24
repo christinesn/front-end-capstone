@@ -1,6 +1,23 @@
+#hero {
+    width: 100%;
+    background: var(--primary1);
+    color: var(--highlight1);
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    column-gap: 7em;
+}
+
 #hero img {
     height: 300px;
     width: 300px;
-    border-radius: 16px;
     object-fit: cover;
+}
+
+#hero article {
+    width: 300px;
+}
+
+#hero .lead-text {
+    margin-bottom: 2em;
 }

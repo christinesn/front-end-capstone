@@ -1,7 +1,4 @@
-/** Karla */
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
-/** Markazi Text */
-@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Markazi+Text:wght@400..700&display=swap');
 
 /**
   Breakpoints
@@ -25,9 +22,14 @@
   --highlight2: #333333;
 }
 
-html {
+html, body {
   font-size: 16px;
   font-family: "Karla", sans-serif;
+}
+
+.container {
+  width: 50%;
+  margin: auto;
 }
 
 a {
@@ -36,26 +38,28 @@ a {
 }
 
 a:hover, a:focus, a:active {
-  transition: all 150ms ease-out;
+  transition: all ease-in-out 150ms;
   color: var(--primary1);
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
-  margin-bottom: 0.3em;
 }
 
 .display-title {
   font-family: "Markazi Text", serif;
   font-weight: medium;
   font-size: 64px;
+  color: var(--primary2);
+  line-height: 1em;
 }
 
 .sub-title {
-  font-family: "Markazi Text";
+  font-family: "Markazi Text", serif;
   font-weight: normal;
-  font-size: 40px;
+  font-size: 32px;
+  line-height: 1em;
 }
 
 .lead-text {
@@ -96,5 +100,21 @@ ul {
 }
 
 img {
-  border-radius: 16px;
+  border-radius: 1em;
+}
+
+.button {
+  padding: 0.75em 2em;
+  border-radius: 0.5em;
+  background: var(--primary2);
+  color: var(--highlight2);
+  font-weight: bold;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+  background: var(--secondary1);
+  color: var(--highlight2);
+  transition: all ease-in-out 150ms;
 }

@@ -1,4 +1,5 @@
 import './Specials.css'
+import { Link } from 'react-router-dom'
 
 const specials = [{
     name: "Greek salad",
@@ -20,23 +21,25 @@ const specials = [{
 export default function Specials () {
     return (
         <section id="specials">
-            <div className="heading">
-                <h2>Specials</h2>
-                <button>Online Menu</button>
-            </div>
-            <div className="cards-container">
-                {specials.map((special) => (
-                    <article className="card" key={special.name}>
-                        <img src={special.image} alt="" />
-                        <div className="card-header">
-                            <h3>{special.name}</h3>
-                            <span className="highlight">{special.price}</span>
-                        </div>
-                        <div className="card-body">
-                            {special.description}
-                        </div>
-                    </article>
-                ))}
+            <div className="container">
+                <div className="heading">
+                    <h2 className="section-title">Specials</h2>
+                    <Link to="/menu" className="button">Online Menu</Link>
+                </div>
+                <div className="cards-container">
+                    {specials.map((special) => (
+                        <article className="card" key={special.name}>
+                            <img src={special.image} alt="" />
+                            <div className="card-header">
+                                <h3>{special.name}</h3>
+                                <span className="highlight">{special.price}</span>
+                            </div>
+                            <div className="card-body">
+                                {special.description}
+                            </div>
+                        </article>
+                    ))}
+                </div>
             </div>
         </section>
     )

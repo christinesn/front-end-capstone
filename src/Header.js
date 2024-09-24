@@ -1,9 +1,12 @@
 import './Header.css'
+import { Link } from 'react-router-dom'
 
 export default function Header({children}) {
     return (
         <header>
-            <img src="/images/Logo.svg" alt="" />
+            <Link to="/">
+                <img src="/images/Logo.svg" alt="" />
+            </Link>
             {children}
         </header>
     )
