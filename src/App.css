@@ -20,6 +20,10 @@
   --secondary2: #FBDABB;
   --highlight1: #EDEFEE;
   --highlight2: #333333;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700; 
+  --weight-extrabold: 800;
 }
 
 html, body {
@@ -28,8 +32,9 @@ html, body {
 }
 
 .container {
-  width: 50%;
+  width: 80%;
   margin: auto;
+  padding: 1em;
 }
 
 a {
@@ -49,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .display-title {
   font-family: "Markazi Text", serif;
-  font-weight: medium;
+  font-weight: var(--weight-medium);
   font-size: 64px;
   color: var(--primary2);
   line-height: 1em;
@@ -68,29 +73,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-title {
-  font-weight: 800;
+  font-weight: var(--weight-extrabold);
   font-size: 20px;
 }
 
 .section-categories {
-  font-weight: 800;
+  font-weight: var(--weight-extrabold);
   font-size: 16px;
 }
 
 .card-title {
-  font-weight: bold;
+  font-weight: var(--weight-bold);
   font-size: 18px;
   color: var(--highlight2);
 }
 
-p {
+p, .paragraph {
   font-size: 16px;
   line-height: 1.5;
 }
 
 .highlight {
-  font-weight: normal;
+  font-weight: var(--weight-medium);
   font-size: 16px;
+  color: var(--secondary1);
 }
 
 ul {
@@ -108,7 +114,7 @@ img {
   border-radius: 0.5em;
   background: var(--primary2);
   color: var(--highlight2);
-  font-weight: bold;
+  font-weight: var(--weight-bold);
 }
 
 .button:hover,

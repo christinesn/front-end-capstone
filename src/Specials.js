@@ -1,5 +1,6 @@
 import './Specials.css'
 import { Link } from 'react-router-dom'
+import DeliveryIcon from './DeliveryIcon'
 
 const specials = [{
     name: "Greek salad",
@@ -23,19 +24,25 @@ export default function Specials () {
         <section id="specials">
             <div className="container">
                 <div className="heading">
-                    <h2 className="section-title">Specials</h2>
+                    <h2 className="display-title">Specials</h2>
                     <Link to="/menu" className="button">Online Menu</Link>
                 </div>
                 <div className="cards-container">
                     {specials.map((special) => (
                         <article className="card" key={special.name}>
                             <img src={special.image} alt="" />
-                            <div className="card-header">
-                                <h3>{special.name}</h3>
-                                <span className="highlight">{special.price}</span>
-                            </div>
                             <div className="card-body">
-                                {special.description}
+                                <div className="card-header">
+                                    <h3>{special.name}</h3>
+                                    <span className="highlight">{special.price}</span>
+                                </div>
+                                <div className="card-details paragraph">
+                                    {special.description}
+                                </div>
+                                <div className="card-footer">
+                                    Order a delivery
+                                    <DeliveryIcon className='delivery-icon' />
+                                </div>
                             </div>
                         </article>
                     ))}

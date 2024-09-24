@@ -2,10 +2,11 @@
     width: 100%;
     background: var(--primary1);
     color: var(--highlight1);
+}
+
+#hero-content {
     display: flex;
-    justify-content: center;
-    padding: 1em;
-    column-gap: 7em;
+    justify-content: space-between;
 }
 
 #hero img {
