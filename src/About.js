@@ -14,7 +14,7 @@ export default function About () {
                         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
                     </p>
                 </article>
-                <article className="about-images">
+                <article>
                     <img src="/images/ownersA.jpg" alt="" />
                     <img src="/images/ownersB.jpg" alt="" />
                 </article>
