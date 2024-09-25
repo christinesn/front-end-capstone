@@ -15,17 +15,25 @@
     color: var(--highlight2);
 }
 
+@media screen and (max-width: 640px) {
+    #specials .display-title {
+        font-size: var(--size-2xl);
+    }
+}
+
 .cards-container {
     display: flex;
     flex-flow: row;
     justify-content: stretch;
-    column-gap: 2em;
+    gap: 2em;
+    flex-wrap: wrap;
 }
 
 .card {
     flex: 1 1 0;
     background: var(--highlight1);
     border-radius: 1rem 1rem 0 0;
+    min-width: 175px;
 }
 
 .card img {

@@ -4,11 +4,24 @@
     padding-bottom: 6rem;
 }
 
+@media screen and (max-width: 640px) {
+    #about {
+      padding: 4em 0;
+    }
+}
+
 #about .container {
     display: flex;
     justify-content: stretch;
     flex-flow: row;
     column-gap: 5rem;
+    row-gap: 1em;
+}
+
+@media screen and (max-width: 768px) {
+    #about .container {
+      flex-flow: column-reverse;
+    }
 }
 
 #about .container article {
@@ -33,4 +46,10 @@
 
 #about img:first-of-type {
     margin-bottom: 0.5em;
+}
+
+@media screen and (max-width: 768px) {
+    #about img:last-of-type {
+      display: none;
+    }
 }

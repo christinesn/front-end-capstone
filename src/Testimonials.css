@@ -16,9 +16,10 @@
 .reviews {
     display: flex;
     flex-flow: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: stretch;
-    column-gap: 1em;
+    gap: 1em;
+    flex-wrap: wrap;
 }
 
 .review {

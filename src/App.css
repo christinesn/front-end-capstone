@@ -1,14 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Markazi+Text:wght@400..700&display=swap');
 
-/**
-  Breakpoints
-  sm: 640px
-  md: 768px
-  lg: 1024px
-  xl: 1280px
-  2xl: 1536px
-*/
-
 * {
   box-sizing: border-box;
 }
@@ -43,20 +34,14 @@ html, body {
   font-family: var(--font-primary);
 }
 
-.container {
-  width: 750px;
-  margin: auto;
-  padding: 1em;
-}
-
 a {
   text-decoration: none;
   color: var(--highlight2);
 }
 
 a:hover, a:focus, a:active {
-  transition: all ease-in-out 150ms;
-  color: var(--primary1);
+  transition: all ease-out 150ms;
+  opacity: 0.75;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -135,4 +120,5 @@ img {
   background: var(--secondary1);
   color: var(--highlight2);
   transition: all ease-out 150ms;
+  opacity: 1;
 }

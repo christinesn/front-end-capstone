@@ -3,7 +3,7 @@ import './Footer.css'
 export default function Footer () {
     return (
         <footer>
-            <div className="container footer-content">
+            <div className="container">
                 <img
                     src="/images/restaurantfood.jpg"
                     alt=""

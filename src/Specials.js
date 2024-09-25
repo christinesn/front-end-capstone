@@ -1,6 +1,6 @@
 import './Specials.css'
 import { Link } from 'react-router-dom'
-import DeliveryIcon from './DeliveryIcon'
+import DeliveryIcon from './icons/DeliveryIcon'
 
 const specials = [{
     name: "Greek salad",
