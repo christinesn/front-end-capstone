@@ -1,0 +1,10 @@
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.form-item {
+    display: flex;
+    gap: 1em;
+}

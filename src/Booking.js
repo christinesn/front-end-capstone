@@ -1,7 +1,12 @@
+import BookingForm from "./BookingForm"
+
 export default function Booking () {
     return (
-        <div>
-            Booking.
-        </div>
+        <section className="container">
+            <h2 className="sub-title">
+                Reserve a table
+            </h2>
+            <BookingForm />
+        </section>
     )
 }
