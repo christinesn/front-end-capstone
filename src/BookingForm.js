@@ -21,19 +21,25 @@ export default function BookingForm ({
     function validateDate () {
         if (!resDate.match(/2024-[0-1][1-9]-[0-3][1-9]/)) {
             setInvalidDate(true)
+            return false
         }
+        return true
     }
 
     function validateTime () {
         if (!resTime) {
             setInvalidTime(true)
+            return false
         }
+        return true
     }
 
     function validateGuests () {
         if (guests > 10 || guests < 1) {
             setInvalidGuests(true)
+            return false
         }
+        return true
     }
 
     function handleDateChange (e) {
@@ -54,6 +60,11 @@ export default function BookingForm ({
 
     function handleSubmit (e) {
         e.preventDefault();
+
+        if (!validateDate() || !validateTime() || !validateGuests()) {
+            return
+        }
+
         submitForm({
             resDate,
             resTime,

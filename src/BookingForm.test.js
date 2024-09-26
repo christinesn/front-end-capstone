@@ -95,6 +95,38 @@ describe('Booking form', () => {
                 expect(message).toBeInTheDocument()
             })
         })
+
+        describe("Form submission", () => {
+            test("Submits the reservation when the input is valid", () => {
+                const submitForm = jest.fn()
+                render(<BookingForm
+                    resTime="17:00"
+                    resDate="2024-09-26"
+                    guests="3"
+                    submitForm={submitForm}
+                />)
+
+                const submitButton = screen.getByText("Make your reservation")
+                fireEvent.click(submitButton)
+
+                expect(submitForm).toHaveBeenCalled()
+            })
+
+            test("Doesn't submit the reservation when the input is invalid", () => {
+                const submitForm = jest.fn()
+                render(<BookingForm
+                    resTime=""
+                    resDate="224-09-26"
+                    guests="300"
+                    submitForm={submitForm}
+                />)
+
+                const submitButton = screen.getByText("Make your reservation")
+                fireEvent.click(submitButton)
+
+                expect(submitForm).not.toHaveBeenCalled()
+            })
+        })
     })
 })
 
