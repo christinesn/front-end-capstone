@@ -1,7 +1,11 @@
+import './ConfirmedBooking.css'
+
 export default function ConfirmedBooking () {
     return (
-        <span>
-            Your booking has been confirmed.
-        </span>
+        <div className="container" id="confirmation">
+            <span className="display-title">
+                Your booking has been confirmed.
+            </span>
+        </div>
     )
 }

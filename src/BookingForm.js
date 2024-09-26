@@ -1,4 +1,5 @@
 import './BookingForm.css'
+import { useState } from 'react'
 
 export default function BookingForm ({
     resDate,
@@ -13,9 +14,42 @@ export default function BookingForm ({
     changeTimes,
     submitForm
 }) {
+    const [invalidDate, setInvalidDate] = useState(false)
+    const [invalidTime, setInvalidTime] = useState(false)
+    const [invalidGuests, setInvalidGuests] = useState(false)
+
+    function validateDate () {
+        if (!resDate.match(/2024-[0-1][1-9]-[0-3][1-9]/)) {
+            setInvalidDate(true)
+        }
+    }
+
+    function validateTime () {
+        if (!resTime) {
+            setInvalidTime(true)
+        }
+    }
+
+    function validateGuests () {
+        if (guests > 10 || guests < 1) {
+            setInvalidGuests(true)
+        }
+    }
+
     function handleDateChange (e) {
+        setInvalidDate(false)
         changeTimes({ date: e.target.value })
         setResDate(e.target.value)
+    }
+
+    function handleTimeChange (e) {
+        setInvalidTime(false)
+        setResTime(e.target.value)
+    }
+
+    function handleGuestsChange (e) {
+        setInvalidGuests(false)
+        setGuests(e.target.value)
     }
 
     function handleSubmit (e) {
@@ -30,41 +64,62 @@ export default function BookingForm ({
 
     return (
         <>
-            <h2 className="sub-title">Reserve a table</h2>
+            <h2 className="display-title booking-header">Reserve a table</h2>
             <form className="booking-form" onSubmit={handleSubmit}>
                 <div className="form-item">
                     <label htmlFor="res-date">Date</label>
                     <input
                         type="date"
                         id="res-date"
+                        className={invalidDate ? "invalid" : ""}
+                        onBlur={validateDate}
                         value={resDate}
                         onChange={handleDateChange}
                     />
+                    {invalidDate && (
+                        <span className="message">
+                            Please select a valid date.
+                        </span>
+                    )}
                 </div>
                 <div className="form-item">
-                    <label htmlFor="res-time">Choose time</label>
+                    <label htmlFor="res-time">Time</label>
                     <select
                         id="res-time"
+                        className={invalidTime ? "invalid" : ""}
                         value={resTime}
-                        onChange={e => setResTime(e.target.value)}
+                        onBlur={validateTime}
+                        onChange={handleTimeChange}
                     >
+                        <option value="">Select a time</option>
                         {availableTimes && availableTimes.map((time) => (
                             <option key={time} value={time}>
                                 {time}
                             </option>
                         ))}
                     </select>
+                    {invalidTime && (
+                        <span className="message">
+                            Please select a time.
+                        </span>
+                    )}
                 </div>
                 <div className="form-item">
                     <label htmlFor="guests">Number of guests</label>
                     <input
                         type="number"
                         placeholder="1"
-                        min="1" max="10"
+                        min="1"
+                        max="10"
                         id="guests"
+                        className={invalidGuests ? "invalid" : ""}
+                        onBlur={validateGuests}
                         value={guests}
-                        onChange={e => setGuests(e.target.value)}
+                        onChange={handleGuestsChange}
                     />
+                    {invalidGuests && (
+                        <span className="message">Please enter between 1 and 10 guests.</span>
+                    )}
                 </div>
                 <div className="form-item">
                     <label htmlFor="occasion">Occasion</label>
@@ -78,7 +133,12 @@ export default function BookingForm ({
                         <option value="anniversary">Anniversary</option>
                     </select>
                 </div>
-                <input type="submit" value="Make your reservation" />
+                <button
+                    type="submit"
+                    disabled={invalidDate || invalidTime || invalidGuests}
+                >
+                    Make your reservation
+                </button>
             </form>
         </>
     )

@@ -1,3 +1,4 @@
+import './Booking.css'
 import BookingForm from "./BookingForm"
 
 export default function Booking ({
@@ -14,7 +15,7 @@ export default function Booking ({
     submitForm
 }) {
     return (
-        <section className="container">
+        <section className="container" id="booking">
             <BookingForm
                 resDate={resDate}
                 setResDate={setResDate}
