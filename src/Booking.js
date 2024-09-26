@@ -14,9 +14,6 @@ export default function Booking ({
 }) {
     return (
         <section className="container">
-            <h2 className="sub-title">
-                Reserve a table
-            </h2>
             <BookingForm
                 resDate={resDate}
                 setResDate={setResDate}
