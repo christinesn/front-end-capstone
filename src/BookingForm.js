@@ -1,21 +1,16 @@
 import './BookingForm.css'
-import { useState } from 'react'
 
-export default function BookingForm () {
-    const resTimes = [
-        '17:00',
-        '18:00',
-        '19:00',
-        '20:00',
-        '21:00',
-        '22:00'
-    ]
-
-    const [resDate, setResDate] = useState()
-    const [resTime, setResTime] = useState(resTimes[0])
-    const [guests, setGuests] = useState('1')
-    const [occasion, setOccasion] = useState('')
-
+export default function BookingForm ({
+    resDate,
+    setResDate,
+    resTime,
+    setResTime,
+    guests,
+    setGuests,
+    occasion,
+    setOccasion,
+    availableTimes
+}) {
     return (
         <form className="booking-form">
             <div className="form-item">
@@ -34,7 +29,7 @@ export default function BookingForm () {
                     value={resTime}
                     onChange={e => setResTime(e.target.value)}
                 >
-                    {resTimes.map((time) => (
+                    {availableTimes.map((time) => (
                         <option key={time} value={time}>
                             {time}
                         </option>
