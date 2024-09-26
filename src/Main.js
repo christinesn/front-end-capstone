@@ -2,27 +2,14 @@ import Home from './Home'
 import Booking from './Booking'
 import { Route, Routes } from 'react-router-dom'
 import { useState, useReducer } from 'react'
+import { fetchAPI, submitAPI } from './API'
 
-export function updateTimes (action) {
-    return [
-        '17:00',
-        '18:00',
-        '19:00',
-        '20:00',
-        '21:00',
-        '22:00'
-    ]
+export function updateTimes (_prevState, { date }) {
+    return fetchAPI(new Date(date))
 }
 
 export function initializeTimes () {
-    return [
-        '17:00',
-        '18:00',
-        '19:00',
-        '20:00',
-        '21:00',
-        '22:00'
-    ]
+    return fetchAPI(new Date())
 }
 
 export default function Main() {
@@ -31,8 +18,14 @@ export default function Main() {
         initializeTimes()
     )
 
-    const [resDate, setResDate] = useState()
-    const [resTime, setResTime] = useState(availableTimes[0])
+    const today = new Date()
+    // Turn date into input value string, i.e. "2024-09-26"
+    const todayFormatted = today.getFullYear() + '-'
+        + ('0' + (today.getMonth()+1)).slice(-2) + '-'
+        + ('0' + today.getDate()).slice(-2)
+
+    const [resDate, setResDate] = useState(todayFormatted)
+    const [resTime, setResTime] = useState()
     const [guests, setGuests] = useState('1')
     const [occasion, setOccasion] = useState('')
 
