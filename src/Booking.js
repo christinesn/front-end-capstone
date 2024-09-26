@@ -9,7 +9,8 @@ export default function Booking ({
     setGuests,
     occasion,
     setOccasion,
-    availableTimes
+    availableTimes,
+    changeTimes
 }) {
     return (
         <section className="container">
@@ -26,6 +27,7 @@ export default function Booking ({
                 occasion={occasion}
                 setOccasion={setOccasion}
                 availableTimes={availableTimes}
+                changeTimes={changeTimes}
             />
         </section>
     )

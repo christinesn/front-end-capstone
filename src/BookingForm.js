@@ -9,8 +9,14 @@ export default function BookingForm ({
     setGuests,
     occasion,
     setOccasion,
-    availableTimes
+    availableTimes,
+    changeTimes
 }) {
+    function handleDateChange (e) {
+        changeTimes({ date: e.target.value })
+        setResDate(e.target.value)
+    }
+
     return (
         <form className="booking-form">
             <div className="form-item">
@@ -19,7 +25,7 @@ export default function BookingForm ({
                     type="date"
                     id="res-date"
                     value={resDate}
-                    onChange={e => setResDate(e.target.value)}
+                    onChange={handleDateChange}
                 />
             </div>
             <div className="form-item">
@@ -29,7 +35,7 @@ export default function BookingForm ({
                     value={resTime}
                     onChange={e => setResTime(e.target.value)}
                 >
-                    {availableTimes.map((time) => (
+                    {availableTimes && availableTimes.map((time) => (
                         <option key={time} value={time}>
                             {time}
                         </option>

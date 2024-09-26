@@ -1,17 +1,35 @@
 import Home from './Home'
 import Booking from './Booking'
 import { Route, Routes } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useReducer } from 'react'
 
 export default function Main() {
-    const availableTimes = [
-        '17:00',
-        '18:00',
-        '19:00',
-        '20:00',
-        '21:00',
-        '22:00'
-    ]
+    function updateTimes (action) {
+        return [
+            '17:00',
+            '18:00',
+            '19:00',
+            '20:00',
+            '21:00',
+            '22:00'
+        ]
+    }
+
+    function initializeTimes () {
+        return [
+            '17:00',
+            '18:00',
+            '19:00',
+            '20:00',
+            '21:00',
+            '22:00'
+        ]
+    }
+
+    const [availableTimes, changeTimes] = useReducer(
+        updateTimes,
+        initializeTimes()
+    )
 
     const [resDate, setResDate] = useState()
     const [resTime, setResTime] = useState(availableTimes[0])
@@ -33,6 +51,7 @@ export default function Main() {
                         occasion={occasion}
                         setOccasion={setOccasion}
                         availableTimes={availableTimes}
+                        changeTimes={changeTimes}
                     />
                 }></Route>
             </Routes>
