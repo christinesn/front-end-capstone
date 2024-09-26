@@ -10,17 +10,28 @@ export default function BookingForm ({
     occasion,
     setOccasion,
     availableTimes,
-    changeTimes
+    changeTimes,
+    submitForm
 }) {
     function handleDateChange (e) {
         changeTimes({ date: e.target.value })
         setResDate(e.target.value)
     }
 
+    function handleSubmit (e) {
+        e.preventDefault();
+        submitForm({
+            resDate,
+            resTime,
+            guests,
+            occasion
+        })
+    }
+
     return (
         <>
             <h2 className="sub-title">Reserve a table</h2>
-            <form className="booking-form">
+            <form className="booking-form" onSubmit={handleSubmit}>
                 <div className="form-item">
                     <label htmlFor="res-date">Date</label>
                     <input

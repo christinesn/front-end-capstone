@@ -10,7 +10,8 @@ export default function Booking ({
     occasion,
     setOccasion,
     availableTimes,
-    changeTimes
+    changeTimes,
+    submitForm
 }) {
     return (
         <section className="container">
@@ -25,6 +26,7 @@ export default function Booking ({
                 setOccasion={setOccasion}
                 availableTimes={availableTimes}
                 changeTimes={changeTimes}
+                submitForm={submitForm}
             />
         </section>
     )
